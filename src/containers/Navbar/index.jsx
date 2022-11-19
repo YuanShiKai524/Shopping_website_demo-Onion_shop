@@ -44,7 +44,7 @@ const Navbar = (props) => {
       <div className='navbar-account-content' style={{ padding: "10px 15px", cursor: "pointer" }}>我的帳戶</div>
       <div className='navbar-account-content' style={{ padding: "10px 15px", cursor: "pointer" }}>購買清單</div>
       <div className='navbar-account-content' style={{ padding: "10px 15px", cursor: "pointer" }} onClick={() => { logout() }}>
-        <Link to={location.pathname} className='navbar-account-logout'>登出</Link>
+        <Link to={location.pathname === '/cart' ? '/login' : location.pathname} className='navbar-account-logout'>登出</Link>
       </div>
     </div>
   )
