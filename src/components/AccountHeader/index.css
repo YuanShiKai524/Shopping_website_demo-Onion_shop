@@ -1,0 +1,29 @@
+.login-header-wrapper {
+  background-color: #bb7944;
+}
+/* header 容器 */
+.login-header-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+/* Logo圖部分 */
+.login-header-logo {
+  text-decoration: none;
+  padding: 6px 25px 6px 0;
+}
+/* header登入文字 */
+.login-word {
+  align-items: center;
+  font-size: 25px;
+}
+/* 需要幫助 */
+.login-help-container {
+  align-items: center;
+}
+.login-help-container a {
+  text-decoration: none;
+  color: lightcyan;
+  font-size: 14px;
+}

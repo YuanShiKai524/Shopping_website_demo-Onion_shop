@@ -1,0 +1,65 @@
+/* Counter */
+.counter-bar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin: 20px 0 ;
+  font-size: 16px;
+}
+
+/* 全選跟勾選方塊 */
+.all-select-container {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+}
+.allSelect-word-container {
+  display: flex;
+  width: 45%;
+}
+.counter-checkbox-container {
+  display: flex;
+  width: 20%;
+  margin-right: 5px;
+  align-items: center;
+}
+.counter-checkbox {
+  margin: 0px;
+}
+
+/* 總金額跟購買按鍵 */
+.go-buy-container {
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.total-price-container {
+  display: flex;
+  align-items: center;
+}
+.total-price {
+  color: red;
+  font-size: 24px;
+  margin-left: 5px;
+}
+
+.go-buy-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  background-color: orangered;
+  border-radius: 3px;
+  margin-left: 15px;
+}
+.go-buy-btn-container>div {
+  color: whitesmoke;
+}
+.go-buy-btn-container:hover {
+  background-color: rgb(255, 96, 38);
+}

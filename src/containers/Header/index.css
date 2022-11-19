@@ -1,0 +1,165 @@
+/* 網站上方整體 設定 */
+
+/* .top-wrapper {
+  background-color: #bb7944;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 16;
+} */
+
+/* 導覽區塊 */
+/* 被antd蓋過，寫入App.css裡的都會註解掉 */
+/* .navbar-section-container {
+  box-sizing: border-box !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+} */
+
+/* .navbar-section-decoration {
+  text-decoration: none !important;
+  color: whitesmoke !important;
+  font-size: 14px !important;
+} */
+
+/* .navbar-hover-decoration:hover {
+  color: lightgray;
+  cursor: pointer;
+} */
+
+/* 賣家中心（導覽區塊左側） */
+/* .seller-center-link {
+  padding: 4px !important;
+} */
+
+/* 下載（導覽區塊左側） */
+/* .download-link {
+  margin: 4px !important;
+  padding-left: 6px !important;
+  border-left: inset !important;
+} */
+/* 追蹤我們區塊 */
+/* .follow-us-container {
+  margin: 4px;
+  padding-left: 6px;
+  border-left: inset;
+}
+.fb-link, .ig-link, .line-link {
+  padding-top: 2px;
+  margin-right: 10px;
+} */
+
+/* 通知總覽圖標 */
+/* .notification-icon {
+  padding: 4px 4px 0 0;
+  height: 16px;
+} */
+/* 通知總覽文字 */
+/* .notification-word {
+  padding-top: 2px;
+} */
+/* 通知總覽hover後顯示的區塊（hover前：隱藏） */
+/* .notification-hover-side-container {
+  display: none;
+  min-width: 160px;
+  min-height: 200px;
+  position: absolute;
+  border: 0px solid white;
+  border-radius: 1%;
+  box-shadow: 0px 5px 15px gray;
+  background-color: white;
+  margin-top: 2px;
+  flex-direction: column;
+} */
+/* 通知總覽hover後顯示的區塊（hover後：顯示） */
+/* .notification-section-container:hover .notification-hover-side-container {
+  display: flex;
+} */
+/* 通知訊息：登入提醒 */
+/* .notification-hover-notice-container {
+  flex: 5;
+  align-items: center;
+  padding: 10px 10px 0px 10px;
+} */
+/* 通知訊息：註冊/登入連結容器 */
+/* .notification-hover-customer-center-container {
+  flex: 1;
+  background-color: rgb(240, 237, 237);
+} */
+/* 通知訊息- 註冊連結, 登入連結 */
+/* .notification-hover-customer-center-container a {
+  text-decoration: none;
+  color: #222;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+} */
+/* 通知訊息- 註冊連結, 登入連結 hover */
+/* .notification-hover-customer-center-container a:hover {
+  background-color: lightgray;
+  color: rgb(218, 162, 90);
+} */
+
+/* --------------------------------------------------------------------------- */
+
+/* 幫助中心 容器 */
+/* .help-center-container {
+  padding-right: 10px;
+} */
+/* 幫助中心圖標 */
+/* .help-center-icon {
+  padding: 4px 5px 0 8px;
+  height: 16px;
+} */
+/* 幫助中心連結(含文字) */
+/* .help-center-link {
+  padding-top: 2px;
+} */
+/* 註冊連結 */
+/* .signup-link {
+  padding: 2px 10px;
+} */
+/* 連結分開器 */
+/* .link-separator {
+  border-right: 1px solid lightsteelblue;
+  height: 13px;
+  margin-top: 5px;
+} */
+/* 登入連結 */
+/* .login-link {
+  padding: 2px 10px;
+} */
+
+/* --------------------------------------------------------------------------- */
+
+/* 網站上方：Logo圖、搜尋區塊、購物車 */
+/* .logo-search-cart-container {
+  box-sizing: border-box;
+  padding-top: 5px;
+} */
+
+/* .logo-search-cart-container {
+  background-color: #bb7944;
+  position: fixed;
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: 16;
+  padding: 0 30px;
+} */
+
+/* Logo圖 */
+/* .logo {
+  padding: 0 20px;
+} */
+/* 購物車 */
+/* .cart-icon-wrapper {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px 0 10px;
+} */

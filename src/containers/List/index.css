@@ -1,0 +1,53 @@
+/* List */
+.cart-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+}
+
+tbody {
+  font-size: 16px;
+}
+
+/* checkbox */
+.cart-checkbox-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* Item */
+.item-img {
+  width: 90px;
+  margin: 10px 0 10px 10px;
+}
+.item-checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item-quantity {
+  /* 這裡雖然是10px，但結果比較好，所以不必更改 */
+  padding: 0 10px;  
+}
+
+td:nth-child(2) {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td:nth-child(5) {
+  color: orangered;
+}
+
+td:nth-child(2), td:nth-child(6) {
+  font-size: 14px;
+}

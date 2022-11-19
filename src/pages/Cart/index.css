@@ -1,0 +1,10 @@
+/* 控制畫面寬度不變形 */
+body {
+  min-width: 952px;
+  font-family: Helvetica Neue, Helvetica, Arial, 文泉驛正黑, WenQuanYi Zen Hei, Hiragino Sans GB, 儷黑 Pro, LiHei Pro, Heiti TC, 微軟正黑體, Microsoft JhengHei UI, Microsoft JhengHei, sans-serif;
+  color: rgba(0, 0, 0, .8);
+}
+
+.btn:hover, button:hover {
+  cursor: pointer;
+}

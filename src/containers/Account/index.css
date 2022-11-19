@@ -1,0 +1,34 @@
+/* 登入or註冊介面區塊 */
+.login-wrapper {
+  justify-content: center;
+}
+.login-container {
+  margin: 20px;
+}
+/* 登入or註冊介面的 登入or註冊文字 */
+.info-login-word {
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+
+/* 資料填寫區塊 */
+.info-container {
+  justify-content: center;
+  flex-direction: column;
+}
+.info-container input {
+  height: 20px;
+}
+input[type='password'].pwd {
+  appearance: auto;
+}
+/* 登入按鈕 */
+.submit-btn {
+  justify-content: center;
+}
+.submit-btn input {
+  width: 100px;
+  height: 25px;
+}

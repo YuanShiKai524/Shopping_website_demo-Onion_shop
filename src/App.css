@@ -1,0 +1,554 @@
+@import '~antd/dist/antd.css';
+
+/* 以下為強制更改之CSS樣式(因為被antd的樣式覆蓋，因此寫在這) */
+
+/*    更改輪播圖片下的圓形按鈕相關樣式    */
+div.home-slide-img-container>div>div>ul>li>button {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 5px !important;
+  border: 0.5px solid black !important;
+  margin: 0 5px !important;
+}
+div.slide-img-container>div>div>ul>li>button {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 5px !important;
+  border: 0.5px solid black !important;
+  margin: 0 5px !important;
+}
+
+div.home-slide-img-container>div>div>ul>li:hover {
+  background-color: "" !important;
+}
+div.slide-img-container>div>div>ul>li:hover {
+  background-color: "" !important;
+}
+
+.ant-carousel .slick-dots li.slick-active {
+  width: 16px !important;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background-color: cyan !important;
+}
+
+.ant-carousel .slick-dots-bottom {
+  bottom: 20px;
+}
+
+/*    所有超連結hover的顏色    */
+a:hover {
+  color: lightgray;
+}
+
+/*     全局樣式    */
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
+}
+
+/* 讓footer的margin-top不會被antd的margin-top = 0給覆蓋 */
+ol,
+ul,
+dl {
+  margin-top: 18px;
+}
+
+/*     Header組件樣式      */
+.navbar-section-container {
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-section-decoration {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 14px;
+}
+
+.navbar-hover-decoration:hover {
+  color: lightgray;
+  cursor: pointer;
+}
+
+/* 賣家中心（導覽區塊左側） */
+.seller-center-link {
+  padding: 4px;
+}
+
+/* 下載（導覽區塊左側） */
+.download-link {
+  margin: 4px;
+  padding-left: 6px;
+  border-left: inset;
+}
+
+.download-link:hover {
+  color: whitesmoke;
+}
+
+/* 追蹤我們區塊 */
+.follow-us-container {
+  margin: 4px;
+  padding-left: 6px;
+  border-left: inset;
+  align-items: center;
+}
+
+.fb-link,
+.ig-link,
+.line-link {
+  padding-top: 2px;
+  margin-right: 10px;
+}
+
+/* 通知總覽圖標 */
+.notification-icon {
+  padding: 6px 4px 0 0;
+  height: 16px;
+}
+
+/* 通知總覽文字 */
+.notification-word {
+  padding-top: 2px;
+}
+
+/* 通知總覽hover後顯示的區塊（hover前：隱藏） */
+.notification-hover-side-container {
+  display: none;
+  min-width: 160px;
+  min-height: 200px;
+  position: absolute;
+  border: 0px solid white;
+  border-radius: 1%;
+  box-shadow: 0px 5px 15px gray;
+  background-color: white;
+  margin-top: 2px;
+  flex-direction: column;
+}
+
+/* 通知總覽hover後顯示的區塊（hover後：顯示） */
+.notification-section-container:hover .notification-hover-side-container {
+  display: flex;
+}
+
+/* 通知訊息：登入提醒 */
+.notification-hover-notice-container {
+  flex: 5;
+  align-items: center;
+  padding: 10px 10px 0px 10px;
+}
+
+/* 通知訊息：註冊/登入連結容器 */
+.notification-hover-customer-center-container {
+  flex: 1;
+  background-color: rgb(240, 237, 237);
+}
+
+/* 通知訊息- 註冊連結, 登入連結 */
+.notification-hover-customer-center-container a {
+  text-decoration: none;
+  color: #222;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 通知訊息- 註冊連結, 登入連結 hover */
+.notification-hover-customer-center-container a:hover {
+  background-color: lightgray;
+  color: rgb(218, 162, 90);
+}
+
+/* 臨時加在通知總覽的註冊、登入字樣上的hover樣式 */
+.notifi:hover {
+  background-color: lightgray !important;
+  color: rgb(218, 162, 90) !important;
+}
+
+.cart-content:hover {
+  background-color: whitesmoke;
+}
+
+.go-cart-btn:hover {
+  background-color: rgb(255, 99, 42) !important;
+  cursor: pointer;
+}
+
+/* 通知總覽跟購物車的氣泡卡片樣式 */
+.ant-popover-inner-content {
+  padding: 0;
+}
+
+/* 幫助中心 容器 */
+.help-center-container {
+  padding-right: 10px;
+}
+
+/* 幫助中心圖標 */
+.help-center-icon {
+  padding: 6px 5px 0 8px;
+  height: 16px;
+}
+
+/* 幫助中心連結(含文字) */
+.help-center-link {
+  padding-top: 2px;
+}
+
+/* 註冊連結 */
+.signup-link {
+  padding: 2px 10px;
+}
+
+/* 連結分開器 */
+.link-separator {
+  border-right: 1px solid lightsteelblue;
+  height: 13px;
+  margin-top: 7px;
+}
+
+/* 登入連結 */
+.login-link {
+  padding: 2px 10px;
+}
+
+/* 用戶登入後，顯示userName的部分之樣式 (複製蝦皮上的樣式) */
+.navbar-username {
+  max-width: 144px;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; 一般來說用text-overflow的話是需要也寫上這個的，但不知為何蝦皮沒寫 */
+}
+.navbar-username-container:hover {
+  cursor: pointer;
+}
+.navbar-username-container:hover .navbar-username {
+  color: lightgray;
+}
+.navbar-account-content:hover {
+  background-color: whitesmoke;
+  color: #26aa99;
+}
+
+.logo-search-cart-container {
+  background-color: #bb7944;
+  /* position: fixed; */
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: 16;
+  padding: 0 30px;
+}
+
+/* Logo圖 */
+.logo {
+  padding: 0 20px;
+}
+
+/* 購物車 */
+.cart-icon-wrapper {
+  flex: 1;
+  min-width: 150px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px 0 10px;
+}
+
+/*    Searchbar 組件 (搜尋區塊)   */
+.search-section-wrapper {
+  width: 85%;
+  align-items: center;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+/* 搜尋欄 區塊*/
+.searchbar-container {
+  flex: 5;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 搜尋列 */
+.searchbar-input {
+  width: 95%;
+  height: 40px;
+  padding-left: 5px;
+}
+
+/* 按下搜尋列後的區塊 */
+.searchbar-pop {
+  display: none;
+  background-color: white;
+  border: 0px solid white;
+  border-radius: 2px;
+  position: absolute;
+  width: 95%;
+  top: 48px;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 15px gray;
+  z-index: 17;
+}
+
+.searchbar-pop a:hover {
+  background-color: rgb(248, 248, 248);
+}
+
+.searchbar-pop a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  flex: 1;
+  padding: 10px;
+  line-height: 16px;
+}
+
+/* 搜尋欄的下方相關搜尋部分 顯示用Class */
+.show {
+  display: flex;
+  flex-direction: column;
+  max-height: 360px;
+  overflow: hidden;
+}
+
+/* 熱搜關鍵字(搜尋列下方) 區塊 */
+.popular-search-container {
+  width: 95%;
+  padding: 5px 5px 0 0;
+}
+
+.popular-search-container a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+/* 搜尋鍵 */
+.searchbtn-container {
+  padding: 5px;
+}
+
+.searchbtn {
+  min-width: 60px;
+  max-width: 190px;
+  height: 40px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  border: 0px solid whitesmoke;
+  border-radius: 2px;
+}
+
+.searchbtn:hover {
+  background-color: white;
+  border: 0px solid white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.navbar {
+  background-color: #bb7944;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 17;
+  padding: 0 30px;
+}
+
+/* Home組件顯示時，在最上方固定 */
+.fixed {
+  position: fixed;
+}
+
+
+/*   Phone組件內CSS樣式   */
+/* 商品展示、排序法選擇區塊 & 側邊分類欄 區塊 設定 */
+.goods-side-section-container {
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+/* 側邊分類欄 區塊 */
+.side-section {
+  width: 190px;
+  flex-direction: column;
+  margin: 0 20px 20px 0;
+}
+.side-section h3 {
+  margin: 0 0 20px 0;
+  font-weight: bold;
+}
+.side-section hr {
+  margin: 0;
+  border-style: solid;
+  border-width: 0.5px 0 0 0;
+  border-color: lightgray;
+}
+.brand-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.brand-list li {
+  padding: 10px;
+}
+li.all-brand {
+  padding-top: 20px;
+}
+.brand-list a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+/* 商品展示、上方排序法選擇 區塊 */
+.goods-sort-wrapper {
+  margin: 0 0 30px 20px;
+  flex: 1;
+}
+.goods-sort-container {
+  flex: 1;
+}
+.goods-sort-container button {
+  cursor: pointer;
+}
+.all-sorts-container {
+  background-color: rgb(243, 243, 243);
+  justify-content: space-between;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+.all-sorts-container > div {
+  display: flex;
+  padding: 10px 30px;;
+}
+.all-sorts-container button {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+/* 排序區按鈕 未被按下時的style */
+.sorts-style {
+  border-top: 1px solid rgb(235, 235, 235);
+  border-right: 1px solid rgb(235, 235, 235);
+  border-left: 1px solid #b7b7b7;
+  border-bottom: 1px solid #b7b7b7;
+  background-color: white;
+}
+.svg-style {
+  opacity: 0.5;  /* 這個css同時用在span跟svg上，並非只有svg */
+}
+.all-sorts-container button:hover {
+  border: 1px solid #b7b7b7;
+  opacity: 1;
+}
+.all-sorts-container button:hover svg, .all-sorts-container button:hover span {
+  opacity: 1;
+}
+/* 排序區按鈕被按下時的style */
+.sorts-click {
+  border: 1px solid #b7b7b7;
+  background-color: rgb(235, 235, 235);
+  box-shadow: 2.5px 2.5px 5px lightgray inset;
+}
+.svg-click {
+  opacity: 1;  /* 這個css同時用在span跟svg上，並非只有svg */
+}
+.btn-sorts-container svg {
+  margin: 0 2px;
+}
+/* 商品顯示 區塊 */
+.phones-container img {
+  width: 180px;
+}
+.phones-container img:hover {
+  cursor: pointer;
+}
+.phone-container {
+  display: flex;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+  margin: 0 5px;
+  border: 0.5px solid lightgray;
+  border-radius: 3px;
+  box-shadow: 0 0 2.5px lightgray; 
+}
+.phone-container:hover {
+  bottom: 1px;
+  box-shadow: 0 0 5px 2px lightgray;
+}
+.name-price-cartSection-container > div {
+  margin: 15px 0;
+}
+div.phone-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+}
+.phone-name a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  padding: 0 8px;
+  cursor: default;
+}
+.phone-name span {
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.phone-name span:hover {
+  color: #256ba7;
+  cursor: pointer;
+}
+.phone-price {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  font: bold 19px/1 Arial,Verdana,'Microsoft JhengHei',Helvetica,sans-serif;
+  color: #bf0000;
+  height: 19px;
+}
+.phone-price span {
+  font: 12px/1.2 Verdana,Arial,Helvetica;
+}
+.phone-container .add-to-cart-wish-list-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+}
+.add-to-cart-wish-list-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background-color: eee;
+}
+.add-cart span {
+  padding: 15px 5px;
+}
+.add-wish-list svg {
+  padding: 15px;
+}
+.add-to-cart-wish-list-container .add-cart {
+  flex: 1;
+  border-right: 0.5px solid lightgray;
+}
+.add-to-cart-wish-list-container button:hover {
+  background-color: #ddd;
+}

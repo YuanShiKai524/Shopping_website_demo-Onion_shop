@@ -1,0 +1,13 @@
+/* 已有帳號？登入 區塊 */
+.go-to-login {
+  font-size: 16px;
+  justify-content: center;
+  align-content: center;
+}
+.go-to-login a {
+  text-decoration: none;
+  color: orange;
+}
+.go-to-login p {
+  margin-top: 16px;
+}

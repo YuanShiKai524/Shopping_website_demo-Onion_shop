@@ -1,0 +1,18 @@
+/*   MyCarousel組件的滑動圖片樣式   */
+/* 橫幅滑動圖片 */
+.slide-img-container {
+  width: 1200px;
+  height: 360px;
+}
+.slide-img img {
+  width: 1200px;
+  height: 360px;
+}
+.slide-img {
+  width: 800%;
+}
+/* 選擇圖片按鈕列 */
+.img-selector {
+  width: 1200px;
+  height: 20px;
+}

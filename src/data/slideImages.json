@@ -1,0 +1,17 @@
+{
+  "/": [
+    "/images/homepage/slider/slide_img-1.png",
+    "/images/homepage/slider/slide_img-2.png",
+    "/images/homepage/slider/slide_img-3.png",
+    "/images/homepage/slider/slide_img-4.png"
+  ],
+  "/手機及周邊": [
+    "/images/products/slider/slide_phone-1.png",
+    "/images/products/slider/slide_phone-2.png",
+    "/images/products/slider/slide_phone-3.png",
+    "/images/products/slider/slide_phone-4.png",
+    "/images/products/slider/slide_phone-5.png",
+    "/images/products/slider/slide_phone-6.png",
+    "/images/products/slider/slide_phone-7.png"
+  ]
+}
