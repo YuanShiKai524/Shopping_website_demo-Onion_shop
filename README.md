@@ -1,6 +1,7 @@
 購物車網站demo -- 洋蔥購物網 Onion Shop
 
 主要功能：
+
     1. 首頁
     2. 商品頁面(目前僅有手機及周邊頁可供瀏覽)
     3. 會員登入(註冊的部分僅有介面，無設置功能)
@@ -8,9 +9,11 @@
     5. 購物車系統
 
 備註：
+
 輪播圖、商品圖片等素材來自蝦皮購物網站，僅使用於此demo專案，若涉及侵權問題，請聯繫我。
 
 圖標素材(來源為免費提供)，來自於以下：
+
     facebook:
     <a href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Hight Quality Icons - Flaticon</a>
 
@@ -40,6 +43,7 @@
 
 
 商品頁面分類圖片素材來源：
+
     手機：
     <a href="https://www.flaticon.com/free-icons/phone" title="phone icons">Phone icons created by Freepik - Flaticon</a>
 
