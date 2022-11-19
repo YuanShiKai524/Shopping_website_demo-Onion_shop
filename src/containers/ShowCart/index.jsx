@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Popover, Badge } from 'antd'
 
 const ShowCart = (props) => {
@@ -13,6 +13,8 @@ const ShowCart = (props) => {
     cartContent: []
   }
   const [popover, setPopover] = useState(initPopover);
+
+  const location = useLocation()
 
   useEffect(() => {
     checkIsUser();
@@ -57,7 +59,7 @@ const ShowCart = (props) => {
   return (
     <div className="cart-icon-wrapper flex">
       <Popover placement="bottomRight" title={popover.cartTitle} content={popover.cartContent} trigger="hover">
-        <Link to={loginState ? '/cart' : '/login'}>
+        <Link to={loginState ? '/cart' : `/login?next=${encodeURIComponent(window.location.origin + '/cart')}`}>
           <Badge size="small" offset={[-2, 5]} count={userInfo.cart.length}>
             <img className="cart-icon flex" src="/images/icons/cart.png" alt="Your shopping cart" style={{ width: "40px" }} />
           </Badge>
