@@ -13,20 +13,15 @@ const App = () => {
   // 路由表
   const element = useRoutes(routes)
 
-  const [title, setTitle] = useState()
-
   const location = useLocation()
 
-  // 發送請求取得網頁標題數據
-  axios('/data/titles.json')
-  .then(
-    response => setTitle(response.data),
-    err => console.log(err)
-  )
-
   useEffect(() => {
-    // 監聽路徑改變，以改變網頁標題
-    document.title = title;
+    // 發送請求取得網頁標題數據，監聽路徑改變，以改變網頁標題
+    axios('http://localhost:3000/data/titles.json')
+    .then(
+      response => document.title = response.data[location.pathname],
+      err => console.log(err)
+    )
   }, [location.pathname])
 
   return (
