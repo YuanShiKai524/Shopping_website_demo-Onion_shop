@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Popover, Badge } from 'antd'
 
 const ShowCart = (props) => {
@@ -13,8 +13,6 @@ const ShowCart = (props) => {
     cartContent: []
   }
   const [popover, setPopover] = useState(initPopover);
-
-  const location = useLocation()
 
   useEffect(() => {
     checkIsUser();
