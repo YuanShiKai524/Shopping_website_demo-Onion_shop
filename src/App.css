@@ -236,6 +236,14 @@ dl {
 .navbar-account-content:hover {
   background-color: whitesmoke;
   color: #26aa99;
+  
+}
+.navbar-account-logout {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.85)
+}
+.navbar-account-content:hover .navbar-account-logout {
+  color: #26aa99;
 }
 
 .logo-search-cart-container {
