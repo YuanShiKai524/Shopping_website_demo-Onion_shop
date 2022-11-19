@@ -17,9 +17,9 @@ const App = () => {
 
   useEffect(() => {
     // 發送請求取得網頁標題數據，監聽路徑改變，以改變網頁標題
-    axios('http://localhost:3000/data/titles.json')
+    axios('/data/titles.json')
     .then(
-      response => document.title = response.data[location.pathname],
+      response => document.title = response.data[decodeURIComponent(location.pathname)],
       err => console.log(err)
     )
   }, [location.pathname])

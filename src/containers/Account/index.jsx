@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import {connect} from 'react-redux'
+import axios from 'axios'
 import {updateLoginState, updateUserInfo} from '../../redux/actions/account'
-import users from '../../data/users.json'
 import './index.css'
 
 const Account = (props) => {
 
-  const {account: {loginState}, updateLoginState, updateUserInfo, nextUrl} = props
+  const {account: {loginState, userInfo}, updateLoginState, updateUserInfo, nextUrl} = props
 
   const [isLoginPage, setIsLoginPage] = useState(false)
+  const [users, setUsers] = useState([])
 
   const location = useLocation();
 
@@ -37,9 +38,15 @@ const Account = (props) => {
 
   // 比對登入帳密是否正確
   const checkUser = () => {
-    // 一般來說要去後端拿數據(axios/fetch之類都行)，這邊直接省略請求服務器部分
     const email = emailRef.current.value
     const password = pwdRef.current.value
+    // 發送請求users數據
+    axios('/data/users.json')
+    .then((response) => {
+      setUsers(response.data)
+    }).catch((err) => {
+      console.log(err)
+    });
     const resultUserInfo = users.find((user) => {
       return user.email === email && user.password === password
     })

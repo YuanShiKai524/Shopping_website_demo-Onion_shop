@@ -5,7 +5,6 @@ import Navbar from '../../containers/Navbar'
 import List from '../../containers/List';
 import Counter from '../../containers/Counter';
 import Footer from '../../components/Footer'
-import titles from '../../data/titles.json'
 import './index.css'
 
 const Cart = (props) => {
@@ -15,7 +14,6 @@ const Cart = (props) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    document.title = titles.cart
     if (!loginState) {
       navigate('/', { replace: true })
     }

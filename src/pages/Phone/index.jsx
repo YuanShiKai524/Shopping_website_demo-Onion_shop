@@ -1,16 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import Header from '../../containers/Header'
 import Slider from '../../components/Main/Slider'
 import Sidebar from '../../components/Sidebar'
 import Sort from '../../containers/Sort'
 import ProductList from '../../containers/ProductList'
-import titles from '../../data/titles.json'
-import products from '../../data/phones.json'
 
 const Phone = () => {
 
+  const [products, setProducts] = useState([])
+
   useEffect(() => {
-    document.title = titles.phone
+    // 請求商品數據
+    axios('/data/phones.json')
+    .then((response) => {
+      setProducts(response.data)
+    }).catch((err) => {
+      console.log(err);
+    });
   })
 
   return (
