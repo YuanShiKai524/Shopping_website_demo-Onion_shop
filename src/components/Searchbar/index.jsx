@@ -1,26 +1,36 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { nanoid } from 'nanoid';
-import allHints from '../../data/hints.json'
 import { useLocation } from 'react-router-dom';
+import axios from 'axios'
 
 const Searchbar = () => {
 
-  // 熱門關鍵字區塊數據(正常來說這個是要去服務器獲取的)
+  // 熱門關鍵字區塊數據
   const populars = ["平板電腦", "韓系美妝", "藍芽耳機", "春夏男裝", "登山鞋", "口罩", "日式零嘴", "加州葡萄酒"];
 
   const location = useLocation()
 
   // hint關鍵字的狀態
-  const [hints, setHints] = useState([allHints[decodeURIComponent(location.pathname)][0]]);
+  const [hints, setHints] = useState([]);
   // 搜尋列是否onFocus的狀態
   const [hasFocused , setHasFocused] = useState(false);
+
+  useEffect(() => {
+    // 發送請求獲取hint關鍵字數據
+    axios('/data/hints.json')
+    .then((response) => {
+      setHints(response.data)
+    }).catch((err) => {
+      console.log(err)
+    });
+  })
 
   // 比對搜尋列跟提示連結的函數
   const matchHint = (event, path) => {
     if (event.target.value === "") {
-      setHints([allHints[path][0]]);
+      setHints([hints[path][0]]);
     } else {
-      const resultsArr = allHints[path].filter((hintLink) => {
+      const resultsArr = hints[path].filter((hintLink) => {
         return hintLink.indexOf(event.target.value) !== -1
       })
       if (resultsArr.length === 0) {
@@ -44,7 +54,7 @@ const Searchbar = () => {
       {/* <!-- 搜尋欄 區塊 --> */}
       <div className="searchbar-container flex">
         {/* <!-- 搜尋列 --> */}
-        <input className="searchbar-input" name="searchbar-input" placeholder={allHints[decodeURIComponent(location.pathname)][0]} onChange={(event) => {matchHint(event, decodeURIComponent(location.pathname))}} onFocus={showPopover} onBlur={hidePopover} />
+        <input className="searchbar-input" name="searchbar-input" placeholder={hints[decodeURIComponent(location.pathname)][0]} onChange={(event) => {matchHint(event, decodeURIComponent(location.pathname))}} onFocus={showPopover} onBlur={hidePopover} />
         {/* <!-- 按下搜尋列跑出的區塊 --> */}
         <div className={hasFocused ? "show searchbar-pop" : "searchbar-pop"}>
           {
