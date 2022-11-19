@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Carousel, Button } from 'antd';
 import { RightOutlined, LeftOutlined } from '@ant-design/icons'
 import { useLocation } from 'react-router-dom';
 import { nanoid } from 'nanoid';
-import allSlideImgs from '../../../../data/slideImages.json'
+import axios from 'axios'
 
 const MyCarousel = (props) => {
 
@@ -12,6 +12,18 @@ const MyCarousel = (props) => {
   const carouselRef = useRef();
 
   const location = useLocation()
+
+  const [allSlideImgs, setAllSlideImgs] = useState({})
+
+  useEffect(() => {
+    // 發送請求獲取輪播圖片數據
+    axios('/data/slideImages.json')
+    .then((response) => {
+      setAllSlideImgs(response.data)
+    }).catch((err) => {
+      console.log(err);
+    });
+  })
 
   // 往後一張圖(antd所用的API自帶的方法)
   const next = () => {
