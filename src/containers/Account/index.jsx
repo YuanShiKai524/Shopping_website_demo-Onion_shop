@@ -7,10 +7,9 @@ import './index.css'
 
 const Account = (props) => {
 
-  const {account: {loginState, userInfo}, updateLoginState, updateUserInfo, nextUrl} = props
+  const {account: {loginState}, updateLoginState, updateUserInfo, nextUrl} = props
 
   const [isLoginPage, setIsLoginPage] = useState(false)
-  const [users, setUsers] = useState([])
 
   const location = useLocation();
 
@@ -43,24 +42,24 @@ const Account = (props) => {
     // 發送請求users數據
     axios('/data/users.json')
     .then((response) => {
-      setUsers(response.data)
+      const users = response.data
+      const resultUserInfo = users.find((user) => {
+        return user.email === email && user.password === password
+      })
+      if (resultUserInfo === undefined) {
+        alert('帳號密碼有誤！')
+        window.location.href = '/login';
+      } else {
+        // 更新登入狀態
+        updateLoginState(true)
+        // 更新登入用戶資訊
+        updateUserInfo(resultUserInfo);
+        // 讓用戶回到原來的瀏覽畫面
+        nextPath.length === 0 ? navigate('/') : navigate(nextPath)
+      }
     }).catch((err) => {
       console.log(err)
     });
-    const resultUserInfo = users.find((user) => {
-      return user.email === email && user.password === password
-    })
-    if (resultUserInfo === undefined) {
-      alert('帳號密碼有誤！')
-      window.location.href = '/login';
-    } else {
-      // 更新登入狀態
-      updateLoginState(true)
-      // 更新登入用戶資訊
-      updateUserInfo(resultUserInfo);
-      // 讓用戶回到原來的瀏覽畫面
-      nextPath.length === 0 ? navigate('/') : navigate(nextPath)
-    }
   }
 
   return (
