@@ -11,34 +11,37 @@ const Searchbar = () => {
 
   const location = useLocation()
 
-  // hint關鍵字的狀態
+  // 儲存每次打字時，hint關鍵字的狀態
   const [hints, setHints] = useState([]);
   // 搜尋列是否onFocus的狀態
   const [hasFocused , setHasFocused] = useState(false);
-  // 進度狀態
-  const [process, setProcess] = useState({
-    allHints: {}, // 數據初始值
+
+  // 請求狀態及總hints的值
+  const initProcess = {
+    allHints: {}, // 所有hints數據的值
     isLoading: true, // 是否處於加載中
     err: '' // 存儲請求相關的錯誤訊息
-  })
+  }
+  const [process, setProcess] = useState(initProcess)
 
   useEffect(() => {
     // 發送請求獲取hint關鍵字數據
     axios('/data/hints.json')
     .then((response) => {
-      setProcess({...process, isLoading: false, allHints: response.data})
+      setProcess({...initProcess, isLoading: false, allHints: response.data})
+      setHints([response.data[decodeURIComponent(location.pathname)][0]])
     }).catch((err) => {
-      setProcess({...process, isLoading: false, err} )
+      setProcess({...initProcess, isLoading: false, err} )
     });
-  })
+  }, [])
 
   // 比對搜尋列跟提示連結的函數
   const matchHint = (event, path) => {
     if (event.target.value === "") {
-      setHints([hints[path][0]]);
+      setHints([process.allHints[path][0]]);
     } else {
-      const resultsArr = hints[path].filter((hintLink) => {
-        return hintLink.indexOf(event.target.value) !== -1
+      const resultsArr = process.allHints[path].filter((hint) => {
+        return hint.indexOf(event.target.value) !== -1 && event.target.value.trim() !== ""
       })
       if (resultsArr.length === 0) {
         setHints([]);
@@ -56,6 +59,7 @@ const Searchbar = () => {
     setHasFocused(false);
   }
 
+
   return (
     <div className="search-section-wrapper flex">
       {/* <!-- 搜尋欄 區塊 --> */}
@@ -67,7 +71,7 @@ const Searchbar = () => {
           {
             process.isLoading ? <Spin /> :
             process.err ? <h1>{process.err}</h1> :
-            process.allHints[decodeURIComponent(location.pathname)].map((hint) => {
+            hints.map((hint) => {
               return (
                 <a key={nanoid()} href="/">{hint}</a>
               )
