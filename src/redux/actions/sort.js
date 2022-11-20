@@ -1,9 +1,31 @@
-import { IS_GRID, UPDATE_PRODUCTS, IS_DEFAULT_RANK, IS_HIGH_TO_LOW, IS_LOW_TO_HIGH, IS_A_TO_Z, IS_Z_TO_A } from "../constant";
+import { UPDATE_PRODUCTS } from "../constant";
 
-export const updateProducts = data => ({type: UPDATE_PRODUCTS, data});
-export const setIsGrid = data => ({type: IS_GRID, data});
-export const setIsDefaultRank = data => ({type: IS_DEFAULT_RANK, data});
-export const setIsHighToLow = data => ({type: IS_HIGH_TO_LOW, data});
-export const setIsLowToHigh = data => ({type: IS_LOW_TO_HIGH, data});
-export const setIsAToZ = data => ({type: IS_A_TO_Z, data});
-export const setIsZToA = data => ({type: IS_Z_TO_A, data});
+export const updateProducts = data => {
+  const { sortType, arr } = data
+  // 加工數組將其改成排序過的數組
+  switch (sortType) {
+    case 'isLowToHigh':
+      arr.sort((a, b) => {
+        return a - b
+      })
+      return {type: UPDATE_PRODUCTS, data: {...data, arr}}
+
+    case 'isHighToLow':
+      arr.sort((a, b) => {
+        return b - a
+      })
+      return {type: UPDATE_PRODUCTS, data: {...data, arr}}
+
+    case 'isAToZ':
+      arr.sort()
+      return {type: UPDATE_PRODUCTS, data: {...data, arr}}
+
+    case 'isZToA':
+      arr.sort()
+      arr.reverse()
+      return {type: UPDATE_PRODUCTS, data: {...data, arr}}
+
+    default:
+      return {type: UPDATE_PRODUCTS, data}
+  }
+}

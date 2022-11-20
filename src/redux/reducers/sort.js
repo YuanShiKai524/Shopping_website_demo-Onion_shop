@@ -1,38 +1,65 @@
-import { IS_GRID, UPDATE_PRODUCTS, IS_DEFAULT_RANK, IS_LOW_TO_HIGH, IS_HIGH_TO_LOW, IS_A_TO_Z, IS_Z_TO_A } from '../constant'
+import { UPDATE_PRODUCTS } from '../constant'
 
 const initState = {
   products: [],
-  isGrid: true,
-  isDefaultRank: true,
-  isLowToHigh: false,
-  isHighToLow: false,
-  isAToZ: false,
-  isZToA: false,
+  sorts: {
+    isGrid: true,
+    isDefaultRank: true,
+    isLowToHigh: false,
+    isHighToLow: false,
+    isAToZ: false,
+    isZToA: false,
+  }
 };
- 
+
 const sortReducer = (preState = initState, action) => {
   const { type, data } = action
   switch (type) {
     case UPDATE_PRODUCTS:
-      return { ...preState, products: data };
+      const { sortType, flag, arr } = data
+      const { products, sorts } = preState
+      // 更改排序按鈕樣式
+      if (sortType === 'isGrid') {
+        return { products: arr, sorts: { ...sorts, isGrid: flag } }
+      } else {
+        for (let key in sorts) {
+          if (key !== 'isGrid' && key !== sortType) {
+            sorts[key] = false
+          }
+          if (key !== 'isGrid' && key === sortType) {
+            sorts[key] = true
+          }
+        }
+        // 排序商品數據
+        switch (sortType) {
+          case 'isLowToHigh':
+          case 'isHighToLow':
+            const newPhones1 = []
+            for (let i = 0; i < arr.length; i++) {
+              for (let j = 0; j < products.length; j++) {
+                if (arr[i] === products[j].price) {
+                  newPhones1.push(products[j])
+                }
+              }
+            }
+            return { products: newPhones1, sorts }
 
-    case IS_GRID:
-      return { ...preState, isGrid: data };
+          case 'isAToZ':
+          case 'isZToA':
+            const newPhones2 = []
+            for (let i = 0; i < arr.length; i++) {
+              for (let j = 0; j < products.length; j++) {
+                if (arr[i] === products[j].model) {
+                  newPhones2.push(products[j])
+                }
+              }
+            }
+            return { products: newPhones2, sorts }
 
-    case IS_DEFAULT_RANK:
-      return { ...preState, isDefaultRank: data, isLowToHigh: false, isHighToLow: false, isAToZ: false, isZToA: false };
-
-    case IS_LOW_TO_HIGH:
-      return { ...preState, isDefaultRank: false, isLowToHigh: data, isHighToLow: false, isAToZ: false, isZToA: false };
-
-    case IS_HIGH_TO_LOW:
-      return { ...preState, isDefaultRank: false, isLowToHigh: false, isHighToLow: data, isAToZ: false, isZToA: false };
-
-    case IS_A_TO_Z:
-      return { ...preState, isDefaultRank: false, isLowToHigh: false, isHighToLow: false, isAToZ: data, isZToA: false };
-
-    case IS_Z_TO_A:
-      return { ...preState, isDefaultRank: false, isLowToHigh: false, isHighToLow: false, isAToZ: false, isZToA: data };
+          default:
+            return { products: arr, sorts }
+        }
+      }
 
     default:
       return preState;

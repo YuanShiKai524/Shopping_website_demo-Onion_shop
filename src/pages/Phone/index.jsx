@@ -6,7 +6,6 @@ import Sort from '../../containers/Sort'
 import ProductList from '../../containers/ProductList'
 
 const Phone = () => {
-
   return (
     <>
       <Header />
