@@ -9,7 +9,7 @@ const initState = {
   isAToZ: false,
   isZToA: false,
 };
-
+ 
 const sortReducer = (preState = initState, action) => {
   const { type, data } = action
   switch (type) {
