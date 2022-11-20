@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 import { connect } from 'react-redux'
 
 const Sidebar = (props) => {
 
-  const { products: phones } = props
+  const { sidebarProducts: phones } = props
 
   // 計算一共有多少個品牌
   const brandCount = () => {
@@ -51,6 +51,6 @@ const Sidebar = (props) => {
 }
 
 export default connect(
-  state => ({products: state.sort.products}),
+  state => ({sidebarProducts: state.sort.sidebarProducts}),
   {}
 )(Sidebar)

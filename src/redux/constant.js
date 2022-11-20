@@ -5,3 +5,4 @@ export const LOGGED_IN_USER = 'loggedInUser'; // 登入的用戶資訊
 export const IS_HOME = 'isHome'; // 是否為首頁
 // Sort組件
 export const UPDATE_PRODUCTS = 'updateProducts'; // 更新商品狀態
+export const UPDATE_SIDEBAR_PRODUCTS = 'updateSidebarProducts'; // 更新Sidebar組件專用的商品數據

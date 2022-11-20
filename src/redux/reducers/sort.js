@@ -1,8 +1,9 @@
-import { UPDATE_PRODUCTS } from '../constant'
+import { UPDATE_PRODUCTS, UPDATE_SIDEBAR_PRODUCTS } from '../constant'
 
 const initState = {
   products: [],
   isGrid: true,
+  sidebarProducts: [] // 專門保存Sidebar使用的商品數據
 };
 
 const sortReducer = (preState = initState, action) => {
@@ -13,7 +14,7 @@ const sortReducer = (preState = initState, action) => {
       const { products } = preState
       
       if (sortType === 'isGrid') {
-        return { products: arr, isGrid: flag }
+        return { ...preState, products: arr, isGrid: flag }
       } else {
         // 排序商品數據
         switch (sortType) {
@@ -27,7 +28,6 @@ const sortReducer = (preState = initState, action) => {
                 }
               }
             }
-            console.log("reducer-lowHigh", newPhones1, products)
             return { ...preState, products: newPhones1 }
 
           case 'isAToZ':
@@ -40,14 +40,15 @@ const sortReducer = (preState = initState, action) => {
                 }
               }
             }
-            console.log("reducer-AZ", newPhones2, products)
             return { ...preState, products: newPhones2 }
 
           default:
-            console.log("reducer-default", arr, products)
             return { ...preState, products: arr }
         }
       }
+
+    case UPDATE_SIDEBAR_PRODUCTS:
+      return {...preState, sidebarProducts: data}
 
     default:
       return preState;
