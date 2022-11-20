@@ -1,5 +1,6 @@
 import React from 'react'
 import { nanoid } from 'nanoid'
+import { connect } from 'react-redux'
 
 const Sidebar = (props) => {
 
@@ -49,4 +50,7 @@ const Sidebar = (props) => {
   )
 }
 
-export default Sidebar
+export default connect(
+  state => ({products: state.sort.products}),
+  {}
+)(Sidebar)

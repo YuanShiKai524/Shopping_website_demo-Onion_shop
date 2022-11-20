@@ -1,16 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import axios from 'axios'
 import { updateProducts, setIsGrid, setIsDefaultRank, setIsHighToLow, setIsLowToHigh, setIsAToZ, setIsZToA } from '../../redux/actions/sort'
 
 const Sort = (props) => {
 
-  const {products, sort, updateProducts, setIsGrid, setIsDefaultRank, setIsHighToLow, setIsLowToHigh, setIsAToZ, setIsZToA } = props
+  const { sort, updateProducts, setIsGrid, setIsDefaultRank, setIsHighToLow, setIsLowToHigh, setIsAToZ, setIsZToA } = props
   const {products: phones, isGrid, isDefaultRank, isHighToLow, isLowToHigh, isAToZ, isZToA} = sort
 
+  // 用於保存最一開始的products數據，供defaultRank排序使用
+  const [products, setProducts] = useState([])
+
   useEffect(() => {
-    // 正常要去伺服器拿數據，拿到後存取至redux裡
-    updateProducts(products)
-  },[updateProducts, products])
+    // 請求商品數據
+    axios('/data/phones.json')
+    .then((response) => {
+      updateProducts(response.data)
+      setProducts(response.data)
+    }).catch((err) => {
+      console.log(err);
+    });
+  }, [])
 
   // 新建一個只有價格的數組
   const pricesArr = phones.map((phone) => {
