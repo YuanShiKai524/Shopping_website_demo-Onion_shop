@@ -2,14 +2,7 @@ import { UPDATE_PRODUCTS } from '../constant'
 
 const initState = {
   products: [],
-  sorts: {
-    isGrid: true,
-    isDefaultRank: true,
-    isLowToHigh: false,
-    isHighToLow: false,
-    isAToZ: false,
-    isZToA: false,
-  }
+  isGrid: true,
 };
 
 const sortReducer = (preState = initState, action) => {
@@ -17,19 +10,11 @@ const sortReducer = (preState = initState, action) => {
   switch (type) {
     case UPDATE_PRODUCTS:
       const { sortType, flag, arr } = data
-      const { products, sorts } = preState
-      // 更改排序按鈕樣式
+      const { products } = preState
+      
       if (sortType === 'isGrid') {
-        return { products: arr, sorts: { ...sorts, isGrid: flag } }
+        return { products: arr, isGrid: flag }
       } else {
-        for (let key in sorts) {
-          if (key !== 'isGrid' && key !== sortType) {
-            sorts[key] = false
-          }
-          if (key !== 'isGrid' && key === sortType) {
-            sorts[key] = true
-          }
-        }
         // 排序商品數據
         switch (sortType) {
           case 'isLowToHigh':
@@ -42,7 +27,8 @@ const sortReducer = (preState = initState, action) => {
                 }
               }
             }
-            return { products: newPhones1, sorts }
+            console.log("reducer-lowHigh", newPhones1, products)
+            return { ...preState, products: newPhones1 }
 
           case 'isAToZ':
           case 'isZToA':
@@ -54,10 +40,12 @@ const sortReducer = (preState = initState, action) => {
                 }
               }
             }
-            return { products: newPhones2, sorts }
+            console.log("reducer-AZ", newPhones2, products)
+            return { ...preState, products: newPhones2 }
 
           default:
-            return { products: arr, sorts }
+            console.log("reducer-default", arr, products)
+            return { ...preState, products: arr }
         }
       }
 

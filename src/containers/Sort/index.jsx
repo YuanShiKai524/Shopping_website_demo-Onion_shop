@@ -5,8 +5,16 @@ import { updateProducts } from '../../redux/actions/sort'
 
 const Sort = (props) => {
 
-  const { products: phones, sorts, updateProducts } = props
-  const {isGrid, isDefaultRank, isHighToLow, isLowToHigh, isAToZ, isZToA} = sorts
+  const { products: phones, isGrid, updateProducts } = props
+
+  const [fiveSorts, setFiveSorts] = useState({
+    isDefaultRank: true, 
+    isHighToLow: false, 
+    isLowToHigh: false,
+    isAToZ: false, 
+    isZToA: false
+  })
+  const { isDefaultRank, isHighToLow, isLowToHigh, isAToZ, isZToA } = fiveSorts
 
   // 用於保存最一開始的products數據，供defaultRank排序使用
   const [products, setProducts] = useState([])
@@ -31,11 +39,23 @@ const Sort = (props) => {
     return phone.model;
   })
 
+  // const updateSortState = (sortType) => {
+  //   for (let key in fiveSorts) {
+  //     if (key !== sortType) {
+  //       fiveSorts[key] = false
+  //     } else {
+  //       fiveSorts[sortType] = true
+  //     }
+  //   }
+  //   console.log("final", fiveSorts);
+  //   return fiveSorts
+  // }
+  
   return (
     <div className="all-sorts-container flex">
       <div className="orient-sorts-container">
         {/* 標準(直向)排序  */}
-        <button type="button" className={isGrid ? "grid-sort sorts-click" : "grid-sort sorts-style"} onClick={() => { updateProducts({sortType: "isGrid", flag: true, arr: phones}) }}>
+        <button type="button" className={isGrid ? "grid-sort sorts-click" : "grid-sort sorts-style"} onClick={() => { updateProducts({sortType: 'isGrid', flag: true, arr: phones}); setFiveSorts({...fiveSorts, isGrid: true})}}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             className={isGrid ? "bi bi-grid-3x3-gap-fill svg-click" : "bi bi-grid-3x3-gap-fill svg-style"} viewBox="0 0 16 16">
             <path
@@ -43,7 +63,7 @@ const Sort = (props) => {
           </svg>
         </button>
         {/* 序列(橫向)排序  */}
-        <button type="button" className={isGrid ? "list-sort sorts-style" : "list-sort sorts-click"} onClick={() => { updateProducts({sortType: "isGrid", flag: false, arr: phones}) }}>
+        <button type="button" className={isGrid ? "list-sort sorts-style" : "list-sort sorts-click"} onClick={() => { updateProducts({sortType: 'isGrid', flag: false, arr: phones}); setFiveSorts({...fiveSorts, isGrid: false}) }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             className={isGrid ? "bi bi-list-ul svg-style" : "bi bi-list-ul svg-click"} viewBox="0 0 16 16">
             <path fillRule="evenodd"
@@ -52,10 +72,10 @@ const Sort = (props) => {
         </button>
       </div>
       <div className="btn-sorts-container">
-        <button type="button" className={isDefaultRank ? "default-rank sorts-click" : "default-rank sorts-style"} onClick={() => { updateProducts({sortType: "isDefaultRank", flag: true, arr: products}) }}>
+        <button type="button" className={isDefaultRank ? "default-rank sorts-click" : "default-rank sorts-style"} onClick={() => { updateProducts({sortType: 'isDefaultRank', flag: true, arr: products}); setFiveSorts({...fiveSorts, isDefaultRank: true}) }}>
           <span className={isDefaultRank ? "svg-click" : "svg-style"}>綜合排名</span>
         </button>
-        <button type="button" className={isLowToHigh ? "low-to-high-price sorts-click" : "low-to-high-price sorts-style"} onClick={() => { updateProducts({sortType: "isLowToHigh", flag: true, arr: pricesArr}) }}>
+        <button type="button" className={isLowToHigh ? "low-to-high-price sorts-click" : "low-to-high-price sorts-style"} onClick={() => { updateProducts({sortType: "isLowToHigh", flag: true, arr: pricesArr}); setFiveSorts({...fiveSorts, isLowToHigh: true}) }}>
           <span className={isLowToHigh ? "svg-click" : "svg-style"}>價格</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             className={isLowToHigh ? "bi bi-sort-numeric-up-alt svg-click" : "bi bi-sort-numeric-up-alt svg-style"} viewBox="0 0 16 16">
@@ -65,7 +85,7 @@ const Sort = (props) => {
               d="M12.438 8.668V14H11.39V9.684h-.051l-1.211.859v-.969l1.262-.906h1.046zM4.5 13.5a.5.5 0 0 1-1 0V3.707L2.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L4.5 3.707V13.5z" />
           </svg>
         </button>
-        <button type="button" className={isHighToLow ? "high-to-low-price sorts-click" : "high-to-low-price sorts-style"} onClick={() => { updateProducts({sortType: "isHighToLow", flag: true, arr: pricesArr}) }}>
+        <button type="button" className={isHighToLow ? "high-to-low-price sorts-click" : "high-to-low-price sorts-style"} onClick={() => { updateProducts({sortType: "isHighToLow", flag: true, arr: pricesArr}); setFiveSorts({...fiveSorts, isHighToLow: true}) }}>
           <span className={isHighToLow ? "svg-click" : "svg-style"}>價格</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             className={isHighToLow ? "bi bi-sort-numeric-down-alt svg-click" : "bi bi-sort-numeric-down-alt svg-style"} viewBox="0 0 16 16">
@@ -75,7 +95,7 @@ const Sort = (props) => {
               d="M12.438 8.668V14H11.39V9.684h-.051l-1.211.859v-.969l1.262-.906h1.046zM4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293V2.5z" />
           </svg>
         </button>
-        <button type="button" className={isAToZ ? "a-to-z-sort sorts-click" : "a-to-z-sort sorts-style"} onClick={() => { updateProducts({sortType: "isAToZ", flag: true, arr: modelArr}) }}>
+        <button type="button" className={isAToZ ? "a-to-z-sort sorts-click" : "a-to-z-sort sorts-style"} onClick={() => { updateProducts({sortType: "isAToZ", flag: true, arr: modelArr}); setFiveSorts({...fiveSorts, isAToZ: true}) }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             className={isAToZ ? "bi bi-sort-alpha-down svg-click" : "bi bi-sort-alpha-down svg-style"} viewBox="0 0 16 16">
             <path fillRule="evenodd"
@@ -85,7 +105,7 @@ const Sort = (props) => {
           </svg>
           <span className={isAToZ ? "svg-click" : "svg-style"}>排序</span>
         </button>
-        <button type="button" className={isZToA ? "z-to-a-sort sorts-click" : "z-to-a-sort sorts-style"} onClick={() => { updateProducts({sortType: "isZToA", flag: true, arr: modelArr}) }}>
+        <button type="button" className={isZToA ? "z-to-a-sort sorts-click" : "z-to-a-sort sorts-style"} onClick={() => { updateProducts({sortType: "isZToA", flag: true, arr: modelArr}); setFiveSorts({...fiveSorts, isZToA: true}) }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             className={isZToA ? "bi bi-sort-alpha-up svg-click" : "bi bi-sort-alpha-up svg-style"} viewBox="0 0 16 16">
             <path fillRule="evenodd"
@@ -101,6 +121,6 @@ const Sort = (props) => {
 }
 
 export default connect(
-  state => ({products: state.sort.products, sorts: state.sort.sorts}),
+  state => ({products: state.sort.products, isGrid: state.sort.isGrid}),
   { updateProducts }
 )(Sort)

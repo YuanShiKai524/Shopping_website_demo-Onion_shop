@@ -96,6 +96,6 @@ const ProductList = (props) => {
 }
 
 export default connect(
-  state => ({ products: state.sort.products, isGrid: state.sort.sorts.isGrid, userInfo: state.account.userInfo, loginState: state.account.loginState }),
+  state => ({ products: state.sort.products, isGrid: state.sort.isGrid, userInfo: state.account.userInfo, loginState: state.account.loginState }),
   { updateUserInfo }
 )(ProductList)
