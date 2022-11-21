@@ -41,13 +41,14 @@ html {
 /* 滑動圖片區塊 容器 */
 .home-slide-img-container {
   width: 900px;
-  /* height: 270px; */
+  height: 270px;
   position: relative;
   overflow: hidden;
 }
 
 .slide-img-container {
   position: relative;
+  height: 360px;
   margin-top: 30px;
 }
 
