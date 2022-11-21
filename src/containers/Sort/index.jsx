@@ -9,10 +9,10 @@ const Sort = (props) => {
 
   // 排序按鈕樣式
   const [sortsBtnStyle, setSortsBtnStyle] = useState({
-    isDefaultRank: true, 
-    isHighToLow: false, 
+    isDefaultRank: true,
+    isHighToLow: false,
     isLowToHigh: false,
-    isAToZ: false, 
+    isAToZ: false,
     isZToA: false
   })
   const { isDefaultRank, isHighToLow, isLowToHigh, isAToZ, isZToA } = sortsBtnStyle
@@ -23,13 +23,13 @@ const Sort = (props) => {
   useEffect(() => {
     // 請求商品數據
     axios('/data/phones.json')
-    .then((response) => {
-      updateProducts({sortType: 'isGrid', flag: true, arr: response.data})
-      updateSidebarProducts(response.data)
-      setProducts(response.data)
-    }).catch((err) => {
-      console.log(err);
-    });
+      .then((response) => {
+        updateProducts({ sortType: 'isGrid', flag: true, arr: response.data })
+        updateSidebarProducts(response.data)
+        setProducts(response.data)
+      }).catch((err) => {
+        console.log(err);
+      });
   }, [])
 
   // 新建一個只有價格的數組
@@ -41,33 +41,30 @@ const Sort = (props) => {
     return phone.model;
   })
 
-  // 更新排序布林值函數
-  const updateSortsStyle = (sortType) => {
-    for (let key in sortsBtnStyle) {
-      if (key !== sortType) {
-        sortsBtnStyle[key] = false
-      } else {
-        sortsBtnStyle[sortType] = true
-      }
-    }
-    return sortsBtnStyle
-  }
-
   // 排序按鈕Click事件
   const sortProducts = (sortType, flag, arr) => {
-    updateProducts({sortType, flag, arr})
+    updateProducts({ sortType, flag, arr })
     if (sortType === 'isGrid') {
-      setSortsBtnStyle({...sortsBtnStyle, isGrid: flag})
+      setSortsBtnStyle({ ...sortsBtnStyle, isGrid: flag })
     } else {
-      setSortsBtnStyle(() => updateSortsStyle(sortType))
+      setSortsBtnStyle(() => {
+        for (let key in sortsBtnStyle) {
+          if (key !== sortType) {
+            sortsBtnStyle[key] = false
+          } else {
+            sortsBtnStyle[sortType] = true
+          }
+        }
+        return sortsBtnStyle
+      })
     }
   }
-  
+
   return (
     <div className="all-sorts-container flex">
       <div className="orient-sorts-container">
         {/* 標準(直向)排序  */}
-        <button type="button" className={isGrid ? "grid-sort sorts-click" : "grid-sort sorts-style"} onClick={() => {sortProducts('isGrid', true, phones)}}>
+        <button type="button" className={isGrid ? "grid-sort sorts-click" : "grid-sort sorts-style"} onClick={() => { sortProducts('isGrid', true, phones) }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             className={isGrid ? "bi bi-grid-3x3-gap-fill svg-click" : "bi bi-grid-3x3-gap-fill svg-style"} viewBox="0 0 16 16">
             <path
@@ -75,7 +72,7 @@ const Sort = (props) => {
           </svg>
         </button>
         {/* 序列(橫向)排序  */}
-        <button type="button" className={isGrid ? "list-sort sorts-style" : "list-sort sorts-click"} onClick={() => {sortProducts('isGrid', false, phones)}}>
+        <button type="button" className={isGrid ? "list-sort sorts-style" : "list-sort sorts-click"} onClick={() => { sortProducts('isGrid', false, phones) }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             className={isGrid ? "bi bi-list-ul svg-style" : "bi bi-list-ul svg-click"} viewBox="0 0 16 16">
             <path fillRule="evenodd"
@@ -133,6 +130,6 @@ const Sort = (props) => {
 }
 
 export default connect(
-  state => ({products: state.sort.products, isGrid: state.sort.isGrid}),
+  state => ({ products: state.sort.products, isGrid: state.sort.isGrid }),
   { updateProducts, updateSidebarProducts }
 )(Sort)
