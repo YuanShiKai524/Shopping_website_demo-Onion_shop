@@ -478,8 +478,12 @@ li.all-brand {
   margin: 0 2px;
 }
 /* 商品顯示 區塊 */
+.phones-container {
+  min-height: 340px;
+}
 .phones-container img {
   width: 180px;
+  min-height: 180px;
 }
 .phones-container img:hover {
   cursor: pointer;

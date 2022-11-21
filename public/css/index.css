@@ -3,7 +3,7 @@ body {
   height: 100%;
   
   /* 追加樣式，為了不讓版型跑掉，把它限定在某個寬度 */
-  min-width: 952px;
+  min-width: 1200px;
 }
 
 html {
