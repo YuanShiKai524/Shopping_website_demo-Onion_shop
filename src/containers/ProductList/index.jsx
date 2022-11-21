@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { Modal } from 'antd'
+import { Modal, Image } from 'antd'
+import ImgPlaceHolder from '../../components/ImgPlaceHolder'
 import { updateUserInfo } from '../../redux/actions/account'
 
 const ProductList = (props) => {
@@ -53,7 +54,7 @@ const ProductList = (props) => {
             <div key={product.id} className="phone-container" style={isGrid ? { flexDirection: 'column', margin: "0 5px" } : { flexDirection: 'row', margin: "6.5px 30px" }}>
               {/* 圖片  */}
               <div className="phone-img">
-                <img alt="洋蔥購物網" src={product.imgUrl} />
+                <Image alt="洋蔥購物網" src={product.imgUrl} loading='lazy' preview={false} placeholder={<ImgPlaceHolder style={{width: "180px", height: "180px"}} />} />
               </div>
               {/* 名稱、價格、加入購物車,願望清單 區塊  */}
               <div className="name-price-cartSection-container" style={isGrid ? { display: "", flexDirection: "", flex: "", marginLeft: "" } : { display: "flex", flexDirection: "column", flex: "1", marginLeft: "10px" }}>

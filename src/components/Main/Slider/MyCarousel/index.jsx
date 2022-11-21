@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Carousel, Button, Spin, Image } from 'antd';
+import { Carousel, Button, Image } from 'antd';
 import { RightOutlined, LeftOutlined } from '@ant-design/icons'
 import { useLocation } from 'react-router-dom';
 import { nanoid } from 'nanoid';
