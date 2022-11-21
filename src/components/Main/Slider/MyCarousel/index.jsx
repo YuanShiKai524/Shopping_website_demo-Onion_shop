@@ -29,7 +29,7 @@ const MyCarousel = (props) => {
     }).catch((err) => {
       setAllState({...allState, isLoading: false, err})
     });
-  })
+  }, [])
 
   // 往後一張圖(antd所用的API自帶的方法)
   const next = () => {
