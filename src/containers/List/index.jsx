@@ -1,6 +1,8 @@
 import React from 'react';
-import Title from '../../components/Title';
+import { Image } from 'antd';
 import { connect } from 'react-redux';
+import Title from '../../components/Title';
+import ImgPlaceHolder from '../../components/ImgPlaceHolder'
 import {updateUserInfo} from '../../redux/actions/account'
 import './index.css';
 
@@ -68,12 +70,12 @@ const List = (props) => {
           items.map((item) => {
             const {id, name, price, imgUrl, quantity, isChecked} = item
             return (
-              <tr key={id}>
+              <tr key={id} style={{height: "112px"}}>
                 <td>
                   <div className="item-checkbox-container">
                     <input className="cart-checkbox btn" type="checkbox" onChange={() => {updateCheckbox(id, isChecked)}} checked={isChecked} />
-                    <div>
-                      <img className="item-img" src={imgUrl} alt="shoes" />
+                    <div style={{width: "100px", height: "100px"}}>
+                      <Image className="item-img" src={imgUrl} alt="shoes" preview={false} placeholder={<ImgPlaceHolder style={{width: "100px", height: "100px"}} />} />
                     </div>
                   </div>
                 </td>

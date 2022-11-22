@@ -38,7 +38,7 @@ const Cart = (props) => {
       <Navbar />
       {/* <!-- Logo圖 --> */}
       <div className="flex" style={{ backgroundColor: "#bb7944" }}>
-        <div style={{margin: "0 30px 0 50px"}}>
+        <div style={{margin: "0 30px 0 50px", height: "90px"}}>
           <Link to='/'>
             <img src="/images/logo.png" alt="Onion Shop LOGO" style={{ width: "90px" }} />
           </Link>
