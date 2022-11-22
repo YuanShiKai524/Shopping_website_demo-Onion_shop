@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
+import { Image } from 'antd'
 import './index.css'
+import ImgPlaceHolder from '../../../ImgPlaceHolder'
 
 const Item = () => {
 
@@ -23,7 +25,7 @@ const Item = () => {
           const { id, cgName, imgUrl } = category;
           return (
             <div key={id}>  
-              <Link to={`/${cgName}`}><img src={imgUrl} alt='category_icon' /></Link>
+              <Link to={`/${cgName}`}><Image src={imgUrl} preview={false} style={{width: "80px", height: "80px"}} alt='category_icon' placeholder={<ImgPlaceHolder style={{width: "80px", height: "80px"}} />} /></Link>
               <span>{cgName}</span>
             </div>
           )
