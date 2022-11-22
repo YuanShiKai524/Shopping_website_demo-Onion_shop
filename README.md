@@ -8,9 +8,42 @@
     4. 加入購物車功能
     5. 購物車系統
 
-備註：
+主要目錄及文件說明：
 
-輪播圖、商品圖片等素材來自蝦皮購物網站，僅使用於此demo專案，若涉及侵權問題，請聯繫我。
+		public -- 靜態文件目錄
+		|＿css -- 通用樣式css檔案
+		|＿data -- 存放前端所需數據(axios發送請求獲取資料的目的地)
+		|＿images -- 存放圖檔之目錄
+
+  	src -- 源代碼目錄
+		|＿components -- 一般組件目錄
+		|＿containers -- 容器組件目錄(使用redux的組件)
+		|＿helpers -- 監聽某個事件用的全局組件
+		|＿pages -- 存放路由組件的目錄(react-router-dom)
+		|＿redux -- redux相關之js文件(actions、reducers、store)
+		|＿routes -- 存放路由表之目錄
+		|＿App.css -- 使用antd的UI庫必須的css樣式檔案(其中也寫了很多為
+									避免被antd樣式覆蓋而額外寫上的css樣式)
+
+以下補充說明部分名稱較難懂的組件：
+
+		components -- 一般組件目錄
+		|＿AccountHeader -- 用於登入及註冊組件之頭部(header)
+		|＿Main -- 首頁的主要內容部分(其中包括輪播圖Slider組件及
+							Carousel等組件)
+		|＿MyATag -- 對html的a標籤封裝的組件
+		|＿Title -- 購物車系統內標題區的組件
+
+
+		containers -- 容器組件目錄(使用redux的組件)
+		|＿Account -- 登入及註冊組件的外層組件
+		|＿Header -- 首頁及商品頁面的共用頭部組件
+		|＿List -- 展示購物車裡商品的組件
+		|＿ProductList -- 展示商品區塊的組件
+		|＿ShowCart -- 負責簡單展示購物車內商品有哪些的組件(位於首頁
+									及商品頁面Header的右上方購物車圖案，如果滑鼠hover至圖案上方，則展示購物車內商品)
+		|＿Sort -- 商品頁面之排序組件
+		
 
 圖標素材(來源為免費提供)，來自於以下：
 
