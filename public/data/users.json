@@ -7,10 +7,10 @@
   },
   {
     "id": "002",
-    "name": "aper0110",
-    "password": "12332100",
-    "email": "aper0110@aaa.com",
-    "avatar": "/images/user_avatar/aper0110.png",
+    "name": "example001",
+    "password": "123321",
+    "email": "example001@aaa.com",
+    "avatar": "https://joeschmoe.io/api/v1/random",
     "cart": [
       {
         "id": "001",
