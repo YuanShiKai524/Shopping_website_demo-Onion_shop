@@ -12,6 +12,7 @@
 .login-header-logo {
   text-decoration: none;
   padding: 6px 25px 6px 0;
+  height: 90px;
 }
 /* header登入文字 */
 .login-word {

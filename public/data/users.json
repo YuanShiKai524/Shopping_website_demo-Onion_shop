@@ -48,31 +48,31 @@
         "id": "001",
         "title": "蔥SHOP店到店|寄件服務更新及服務規範修訂公告",
         "content": "親愛的用戶您好，為提供您更方便的寄/取件服務，蔥SHOP店到店已陸續推出新服務如：【自助寄件服務】、【智取店門市】…等，歡迎點擊參閱完整蔥SHOP店到店物流交寄/門市交寄服務規範更新。",
-        "imgUrl": "/images/notifications/notif001.jfif"
+        "imgUrl": "/images/notifications/001.png"
       },
       {
         "id": "002",
-        "title": "洋蔥購物【11.18 月中狂購節】11/18限定商城92折券已送達！",
-        "content": "狂灑商城92折券🔥最高可折抵$5,000！限11/18使用，先用先贏！11/18 全站$299起免運 每人3張立即領💪玩遊戲天天抽AirPods 3✨",
-        "imgUrl": "/images/notifications/notif002.jfif"
+        "title": "洋蔥購物【5.5 月初狂購節】5/15限定商城92折券已送達！",
+        "content": "狂灑商城92折券🔥最高可折抵$5,000！限5/15使用，先用先贏！5/15 全站$299起免運 每人3張立即領💪玩遊戲天天抽AirPods 3✨",
+        "imgUrl": "/images/notifications/002.png"
       },
       {
         "id": "003",
         "title": "蔥SHOP店到店滿$99免運費",
         "content": "蔥SHOP店到店免運券已匯入您的「我的優惠券」中，請於期限前使用完畢。數量有限，先用先贏。",
-        "imgUrl": "/images/notifications/notif001.jfif"
+        "imgUrl": "/images/notifications/001.png"
       },
       {
         "id": "004",
-        "title": "洋蔥購物【11.11最強購物節】老闆加碼! 11/11商城93折券已送達！",
-        "content": "11/11 老闆加碼商城93折券🔥已自動匯入你的優惠券中，最高折抵$1,500！11/11 12:00開放使用，先用先贏！手刀領全站$0起免運券，領券結帳超划算👉",
-        "imgUrl": "/images/notifications/notif003.jfif"
+        "title": "洋蔥購物【5.5最強購物節】老闆加碼! 5/5商城93折券已送達！",
+        "content": "5/5 老闆加碼商城93折券🔥已自動匯入你的優惠券中，最高折抵$1,500！5/5 12:00開放使用，先用先贏！手刀領全站$0起免運券，領券結帳超划算👉",
+        "imgUrl": "/images/notifications/003.png"
       },
       {
         "id": "005",
         "title": "手機號碼綁定通知",
         "content": "新手機號碼(+886) 90****777現已綁定至您的蔥SHOP帳號。如果非您本人所操作，請您立即聯繫蔥SHOP客服",
-        "imgUrl": "/images/notifications/notif004.png"
+        "imgUrl": "/images/notifications/004.png"
       }
     ]
   },
