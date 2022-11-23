@@ -49,7 +49,7 @@ const MyCarousel = (props) => {
           allState.allSlideImgs[decodeURIComponent(location.pathname)].map((img) => {
             return (
               <div key={nanoid()}>
-                <a href="/"><Image style={location.pathname === '/' ? { width: "900px", height: "270px" } : { width: "1200px", height: "360px" }} src={img} alt='slideImage' loading='lazy' preview={false} placeholder={<ImgPlaceHolder style={location.pathname === '/' ? { width: "900px", height: "270px" } : { width: "1200px", height: "360px" }} />} /></a>
+                <a href="/"><Image style={location.pathname === '/' ? { width: "900px", height: "270px" } : { width: "1200px", height: "360px" }} src={img} alt='slideImage' preview={false} placeholder={<ImgPlaceHolder style={location.pathname === '/' ? { width: "900px", height: "270px" } : { width: "1200px", height: "360px" }} />} /></a>
               </div>
             )
           })
