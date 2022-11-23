@@ -40,7 +40,7 @@ const ShowCart = (props) => {
             })
           }
           <div className='flex' style={{ padding: "8px 12px", justifyContent: "flex-end" }}>
-            <Link to='/cart' className='go-cart-btn flex' style={{ backgroundColor: 'orangered', width: "100px", padding: "8px 12px", borderRadius: "2px", color: 'white' }}>查看我的購物車</Link>
+            <Link to='/cart' className='go-cart-btn flex' style={{ backgroundColor: 'orangered', padding: "8px 12px", borderRadius: "2px", color: 'white' }}>查看我的購物車</Link>
           </div>
         </div>
       )

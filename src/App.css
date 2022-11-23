@@ -105,15 +105,21 @@ dl {
   margin-right: 10px;
 }
 
-/* 通知總覽圖標 */
-.notification-icon {
-  padding: 6px 4px 0 0;
-  height: 16px;
+/* 通知總覽容器 */
+.notification-section-container {
+  display: flex;
+  align-items: center;
+  padding: 0 5px
 }
 
-/* 通知總覽文字 */
-.notification-word {
-  padding-top: 2px;
+/* 通知總覽圖標 */
+.notification-section-container > div > div {
+  padding-right: 3px;
+  align-items: center;
+  justify-content: center;
+}
+.notification-icon {
+  height: 16px;
 }
 
 /* 通知總覽hover後顯示的區塊（hover前：隱藏） */
@@ -188,18 +194,18 @@ dl {
 
 /* 幫助中心 容器 */
 .help-center-container {
-  padding-right: 10px;
+  align-items: center;
 }
 
 /* 幫助中心圖標 */
 .help-center-icon {
-  padding: 6px 5px 0 8px;
+  padding-right: 3px;
   height: 16px;
 }
 
 /* 幫助中心連結(含文字) */
 .help-center-link {
-  padding-top: 2px;
+  padding-right: 5px;
 }
 
 /* 註冊連結 */
@@ -261,7 +267,7 @@ dl {
   padding: 0 20px;
 }
 
-/* 購物車 */
+/* 購物車圖案 */
 .cart-icon-wrapper {
   flex: 1;
   min-width: 150px;
