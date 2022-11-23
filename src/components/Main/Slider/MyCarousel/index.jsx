@@ -33,30 +33,34 @@ const MyCarousel = (props) => {
 
   // 往後一張圖(antd所用的API自帶的方法)
   const next = () => {
-    carouselRef.current.next()
+    setTimeout(() => {
+      carouselRef.current.next()
+    }, 400)
   }
   // 往前一張圖(antd所用的API自帶的方法)
   const prev = () => {
-    carouselRef.current.prev()
+    setTimeout(() => {
+      carouselRef.current.prev()
+    }, 400)
   }
 
   return (
     <>
-      <Carousel autoplay pauseOnHover={false} autoplaySpeed={5000} ref={carouselRef} lazyLoad={true}>
+      <Carousel autoplay pauseOnHover={false} autoplaySpeed={5000} ref={carouselRef} lazyLoad='ondemand'>
         {
           allState.isLoading ? <Loading /> :
           allState.err ? <h1>{allState.err}</h1> :
           allState.allSlideImgs[decodeURIComponent(location.pathname)].map((img) => {
             return (
               <div key={nanoid()}>
-                <a><Image style={location.pathname === '/' ? { width: "900px", height: "270px" } : { width: "1200px", height: "360px" }} src={img} alt='slideImage' preview={false} placeholder={<ImgPlaceHolder style={location.pathname === '/' ? { width: "900px", height: "270px" } : { width: "1200px", height: "360px" }} />} /></a>
+                <Image style={location.pathname === '/' ? { width: "900px", height: "270px" } : { width: "1200px", height: "360px" }} src={img} alt='slideImage' preview={false} placeholder={<ImgPlaceHolder style={location.pathname === '/' ? { width: "900px", height: "270px" } : { width: "1200px", height: "360px" }} />} />
               </div>
             )
           })
         }
       </Carousel>
-      <Button style={{ display: hasMouseEnter ? "flex" : "none" }} className={location.pathname === '/' ? 'home-slide-arrow right' : 'arrow right'} onClick={next} icon={<RightOutlined />} />
-      <Button style={{ display: hasMouseEnter ? "flex" : "none" }} className={location.pathname === '/' ? 'home-slide-arrow left' : 'arrow left'} onClick={prev} icon={<LeftOutlined />} />
+      <Button style={{ display: hasMouseEnter ? "flex" : "none" }} className={location.pathname === '/' ? 'home-slide-arrow right' : 'arrow right'} onClick={() => {next()}} icon={<RightOutlined />} />
+      <Button style={{ display: hasMouseEnter ? "flex" : "none" }} className={location.pathname === '/' ? 'home-slide-arrow left' : 'arrow left'} onClick={() => {prev()}} icon={<LeftOutlined />} />
     </>
   )
 }
