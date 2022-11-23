@@ -32,7 +32,7 @@ const AccountHeader = () => {
         </div>
         {/* 需要幫助  */}
         <div className="login-help-container flex">
-          <MyATag href="https://help.shopee.tw/portal">需要幫助？</MyATag>
+          <MyATag>需要幫助？</MyATag>
         </div>
       </div>
     </div>

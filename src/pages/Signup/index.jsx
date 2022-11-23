@@ -26,9 +26,9 @@ const Signup = () => {
           {/* 服務條款及隱私權政策確認區塊 */}
           < div className="policy-container flex" >
             <p>點擊註冊，即表示您已閱讀並同意洋蔥購物網的</p>
-            <MyATag href="https://shopee.tw/legaldoc/termsOfService/?__classic__=1">服務條款</MyATag>
+            <MyATag>服務條款</MyATag>
             <p>與</p>
-            <MyATag href="https://shopee.tw/legaldoc/privacy/?__classic__=1">隱私權政策</MyATag>
+            <MyATag>隱私權政策</MyATag>
           </div >
           {/* 已有帳號 ? 連接登入 區塊 */}
           < div className="go-to-login flex" >
