@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { connect } from 'react-redux';
 import Searchbar from '../../components/Searchbar'
 import Navbar from '../Navbar'
@@ -31,11 +31,19 @@ const Header = (props) => {
       <Navbar />
       <div className={isHome ? "logo-search-cart-container fixed flex" : "logo-search-cart-container flex"} style={{minWidth: '952px'}}>
         {/* <!-- Logo圖 --> */}
-        <a href='/'>
-          <div className="logo flex">
-            <img src="/images/logo.png" alt="Onion Shop LOGO" style={{ width: "90px" }} />
-          </div>
-        </a>
+        {
+          isHome ?
+          <a href="/">
+            <div className="logo flex">
+              <img src="/images/logo.png" alt="Onion Shop LOGO" style={{ width: "90px" }} />
+            </div>
+          </a> :
+          <Link to="/">
+            <div className="logo flex">
+              <img src="/images/logo.png" alt="Onion Shop LOGO" style={{ width: "90px" }} />
+            </div>
+          </Link>
+        }
         {/* <!-- 搜尋區塊：搜尋欄、搜尋鍵 --> */}
         <Searchbar />
         {/* <!-- 購物車 --> */}

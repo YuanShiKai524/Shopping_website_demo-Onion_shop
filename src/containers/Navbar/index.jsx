@@ -72,7 +72,7 @@ const Navbar = (props) => {
               )
             })
           }
-          <Link to='/' className='flex cart-content' style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(249, 249, 249)', padding: "10px 0px", cursor: "pointer", color: "black" }}>查看全部</Link>
+          <Link className='flex cart-content' style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgb(249, 249, 249)', padding: "10px 0px", cursor: "pointer", color: "black" }}>查看全部</Link>
         </div>
       )
       setPopover({ notifTitle, notifContent });
@@ -103,10 +103,10 @@ const Navbar = (props) => {
       {/* <!-- 導覽區塊(左側部分:賣家中心、下載(QRcode &下載頁面)、追蹤我們) --> */}
       <div className="flex">
         {/* <!-- 賣家中心連結 --> */}
-        <MyATag className="seller-center-link navbar-section-decoration navbar-hover-decoration" href="https://seller.shopee.tw/account/signin?next=%2F">賣家中心</MyATag>
+        <MyATag className="seller-center-link navbar-section-decoration navbar-hover-decoration">賣家中心</MyATag>
         {/* <!-- 下載 --> */}
         <div className="flex">
-          <MyATag className="download-link navbar-section-decoration" href="https://shopee.tw/web">
+          <MyATag className="download-link navbar-section-decoration">
             <div className="navbar-hover-decoration">下載</div>
           </MyATag>
         </div>
@@ -114,19 +114,19 @@ const Navbar = (props) => {
         <div className="flex follow-us-container">
           <div className="flex navbar-section-decoration" style={{ marginRight: "4px" }}>追蹤我們</div>
           {/* <!-- Facebook --> */}
-          <MyATag className="fb-link" href="https://facebook.com">
+          <MyATag className="fb-link">
             <div className="flex">
               <img src="/images/icons/fb.png" style={{ width: "16px" }} alt="header_icon" />
             </div>
           </MyATag>
           {/* <!-- Instagram --> */}
-          <MyATag className="ig-link" href="https://instagram.com">
+          <MyATag className="ig-link">
             <div className="flex">
               <img src="/images/icons/instagram.png" style={{ width: "16px" }} alt="header_icon" />
             </div>
           </MyATag>
           {/* <!-- Line 官方帳號 --> */}
-          <MyATag className="line-link" href="https://page.line.me/shopee?openQrModal=true">
+          <MyATag className="line-link">
             <div className="flex">
               <img src="/images/icons/line.png" style={{ width: "16px" }} alt="header_icon" />
             </div>
@@ -152,7 +152,7 @@ const Navbar = (props) => {
         {/* <!-- 幫助中心 --> */}
         <div className="help-center-container flex">
           <img className="help-center-icon" src="/images/icons/help_icon.png" style={{ width: "16px" }} alt="header_icon" />
-          <MyATag className="help-center-link navbar-section-decoration navbar-hover-decoration" href="https://help.shopee.tw/portal">幫助中心</MyATag>
+          <MyATag className="help-center-link navbar-section-decoration navbar-hover-decoration">幫助中心</MyATag>
         </div>
         {/* <!-- 註冊/登入區塊 --> */}
         {/* <!-- 註冊連結 --> */}

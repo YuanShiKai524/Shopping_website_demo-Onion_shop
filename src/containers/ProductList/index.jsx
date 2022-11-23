@@ -60,7 +60,7 @@ const ProductList = (props) => {
               <div className="name-price-cartSection-container" style={isGrid ? { display: "", flexDirection: "", flex: "", marginLeft: "" } : { display: "flex", flexDirection: "column", flex: "1", marginLeft: "10px" }}>
                 {/* 名稱  */}
                 <div className="phone-name google-phone" style={isGrid ? { flex: "" } : { flex: "1" }}>
-                  <a href="/"><span style={isGrid ? { fontSize: "14px" } : { fontSize: '16px' }}>{product.name}</span></a>
+                  <a><span style={isGrid ? { fontSize: "14px" } : { fontSize: '16px' }}>{product.name}</span></a>
                 </div>
                 {/* 價格  */}
                 <div className="phone-price" style={isGrid ? { flex: "" } : { flex: "1" }}>

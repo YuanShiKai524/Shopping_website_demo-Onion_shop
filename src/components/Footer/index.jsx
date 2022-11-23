@@ -1,5 +1,4 @@
 import React from 'react'
-import MyATag from '../MyATag'
 import './index.css'
 
 const Footer = () => {
@@ -14,16 +13,16 @@ const Footer = () => {
             關於我們
             <ul>
               <li>
-                <a href="/">關於我們</a>
+                <a>關於我們</a>
               </li>
               <li>
-                <a href="/">運費&配送資訊</a>
+                <a>運費&配送資訊</a>
               </li>
               <li>
-                <MyATag href="https://shopee.tw/legaldoc/privacy/?__classic__=1">隱私權政策</MyATag>
+                <a>隱私權政策</a>
               </li>
               <li>
-                <MyATag href="https://shopee.tw/legaldoc/termsOfService/?__classic__=1">服務條款</MyATag>
+                <a>服務條款</a>
               </li>
             </ul>
           </div>
@@ -32,13 +31,13 @@ const Footer = () => {
             客服中心
             <ul>
               <li>
-                <a href="/">聯絡我們</a>
+                <a>聯絡我們</a>
               </li>
               <li>
-                <MyATag href="https://help.shopee.tw/portal">幫助中心</MyATag>
+                <a>幫助中心</a>
               </li>
               <li>
-                <a href="/">退貨退款</a>
+                <a>退貨退款</a>
               </li>
             </ul>
           </div>
@@ -47,13 +46,13 @@ const Footer = () => {
             帳戶中心
             <ul>
               <li>
-                <a href="/">我的帳戶</a>
+                <a>我的帳戶</a>
               </li>
               <li>
-                <a href="/">訂單查詢</a>
+                <a>訂單查詢</a>
               </li>
               <li>
-                <a href="/">願望清單</a>
+                <a>願望清單</a>
               </li>
             </ul>
           </div>

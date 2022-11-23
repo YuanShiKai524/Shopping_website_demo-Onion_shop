@@ -37,11 +37,11 @@ const Sidebar = (props) => {
       </h3>
       <hr />
       <ul className="brand-list">
-        <li className="all-brand"><a href="/">所有品牌(<span id="allNum">{brandCount()}</span>)</a></li>
+        <li className="all-brand"><a>所有品牌(<span id="allNum">{brandCount()}</span>)</a></li>
         {
           phones.map((phone) => {
             return (
-              <li key={nanoid()}><a href="/">{phone.brand}(<span>{brandNumber(phone.brand)}</span>)</a></li>
+              <li key={nanoid()}><a>{phone.brand}(<span>{brandNumber(phone.brand)}</span>)</a></li>
             )
           })
         }

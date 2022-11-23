@@ -24,8 +24,8 @@ const Item = () => {
         categories.map((category) => {
           const { id, cgName, imgUrl } = category;
           return (
-            <div key={id}>  
-              <Link to={`/${cgName}`}><Image src={imgUrl} preview={false} style={{width: "80px", height: "80px"}} alt='category_icon' placeholder={<ImgPlaceHolder style={{width: "80px", height: "80px"}} />} /></Link>
+            <div key={id}>
+              <Link to="/手機及周邊"><Image src={imgUrl} preview={false} style={{width: "80px", height: "80px"}} alt='category_icon' placeholder={<ImgPlaceHolder style={{width: "80px", height: "80px"}} />} /></Link>
               <span>{cgName}</span>
             </div>
           )
