@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { useLocation, useRoutes } from 'react-router-dom'
 import axios from 'axios'
 import Footer from './components/Footer'

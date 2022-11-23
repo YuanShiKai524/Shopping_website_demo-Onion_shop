@@ -42,7 +42,7 @@ const MyCarousel = (props) => {
 
   return (
     <>
-      <Carousel autoplay pauseOnHover={false} autoplaySpeed={5000} ref={carouselRef}>
+      <Carousel autoplay pauseOnHover={false} autoplaySpeed={5000} ref={carouselRef} lazyLoad={true}>
         {
           allState.isLoading ? <Loading /> :
           allState.err ? <h1>{allState.err}</h1> :
