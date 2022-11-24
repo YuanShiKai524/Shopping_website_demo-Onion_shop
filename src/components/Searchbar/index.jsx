@@ -50,22 +50,20 @@ const Searchbar = () => {
       }
     }
   }
-  // 點擊搜尋列讓提示區塊顯示
-  const showPopover = () => {
-    setHasFocused(true);
-  }
-  // 搜尋列沒有focus則隱藏提示區塊
-  const hidePopover = () => {
-    setHasFocused(false);
-  }
 
-
+  // 在window上加一個點擊事件，讓關鍵字提示區塊隱藏
+  window.addEventListener('click', (event) => {
+    if (!event.target.matches(".searchbar-input")) {
+      setHasFocused(false);
+    }
+  })
+  
   return (
     <div className="search-section-wrapper flex">
       {/* <!-- 搜尋欄 區塊 --> */}
       <div className="searchbar-container flex">
         {/* <!-- 搜尋列 --> */}
-        <input className="searchbar-input" name="searchbar-input" placeholder={process.isLoading ? "" : process.allHints[decodeURIComponent(location.pathname)][0]} onChange={(event) => { matchHint(event, decodeURIComponent(location.pathname)) }} onFocus={showPopover} onBlur={hidePopover} />
+        <input className="searchbar-input" name="searchbar-input" placeholder={process.isLoading ? "" : process.allHints[decodeURIComponent(location.pathname)][0]} onChange={(event) => { matchHint(event, decodeURIComponent(location.pathname)) }} onFocus={() => {setHasFocused(true)}} />
         {/* <!-- 按下搜尋列跑出的區塊 --> */}
         <div className={hasFocused ? "show searchbar-pop" : "searchbar-pop"}>
           {
